@@ -18,7 +18,7 @@
 
   <button type="button"
   class="btn btn-primary"
-  onclick="">
+  onclick="startTime()">
   Start Timer</button>
 
   <button type="button"
@@ -33,7 +33,27 @@
     console.log(myTime);
   }
 
-  
+  function startTime(){
+      for(let i = 0; i < 4; i++) {
+        setTimeout(function() {
+            count_down = document.getElementById("countdown")
+            count_down.innerHTML = i
+        }, ((3-i) * 1000))
+      }
+
+      setTimeout(function() {
+          target = document.getElementById("target");
+          if(myTime === undefined) {
+              target.innerHTML = "Too Slow"
+          }else {
+              let buttonTime = Date.now();
+              let diff = buttonTime - myTime;
+              target.innerHTML = "Time was " + diff
+          }
+          myTime = undefined;
+      }, 3000)
+      
+  }
   </script>
 
 </body>
