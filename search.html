@@ -92,6 +92,26 @@
             disTag = document.getElementById("distance")
             disTag.innerHTML = "Distance is " + maxDistance
         }
+
+        function resetGame(){
+            animalLocation = getRandomInt(0,24)
+            triesCount = 0
+            triesTag = document.getElementById("tries")
+            triesTag.innerHTML = "Number of tries is " + triesCount
+            disTag = document.getElementById("distance")
+            distag.innerHTML = "Distance is 0"
+
+            for(let i = 0; i <= 23; i++){
+                imgElement = document.getElementById(ids[i])
+                imgElement.src = "7-1.jfif"
+            }
+        }
+
+        function getRandomInt(min, max){
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max-min) + min);
+        }
         
 
 
